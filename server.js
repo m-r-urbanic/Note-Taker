@@ -1,6 +1,6 @@
 const express = require('express');
 const note = require('./db/db.json');
-const PORT = process.env.port || 3001;
+const PORT = 3001;
 
 const app = express();
 
@@ -10,11 +10,6 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
-
-// GET Route for notes
-app.get('/feedback', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
 
 
 // GET request
@@ -36,6 +31,7 @@ app.get('/api/notes', (req, res) => {
     // log response HERE
 
   });
+
   
 // change port to local for testing
 app.listen(PORT, () =>
