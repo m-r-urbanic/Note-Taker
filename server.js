@@ -23,17 +23,6 @@ app.post('/api/notes', (req, res) => {
     // Let the client know that their POST request was received
     res.json(`${req.method} request received`);
   
-    const {title, text} = req.body;
-
-    if (title && text) {
-        const newNotes = {
-            title,
-            text,
-        }
-
-
-
-    }
     
     // add error handling HERE
 
