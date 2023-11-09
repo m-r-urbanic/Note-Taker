@@ -1,4 +1,5 @@
 const express = require('express');
+// link the json db
 const note = require('./db/db.json');
 const PORT = 3001;
 
