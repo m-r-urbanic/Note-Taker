@@ -14,18 +14,27 @@ app.get('/', (req, res) => {
 
 // GET request
 app.get('/api/notes', (req, res) => {
-    // Let the client know that their request was received
-    res.json(`${req.method} request received`);
-  
     // Set the notes to the client
     return res.json(note);
   });
   
-  // POST request
-  app.post('/api/notes', (req, res) => {
+// POST request
+app.post('/api/notes', (req, res) => {
     // Let the client know that their POST request was received
     res.json(`${req.method} request received`);
   
+    const {title, text} = req.body;
+
+    if (title && text) {
+        const newNotes = {
+            title,
+            text,
+        }
+
+
+
+    }
+    
     // add error handling HERE
 
     // log response HERE
